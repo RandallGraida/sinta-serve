@@ -10,7 +10,7 @@ from datetime import datetime
 from boto3.dynamodb.conditions import Key
 
 # Initialize FastAPI app
-app = FastAPI(title="Notes API", description="Simple Notes API with DynamoDB and S3")
+app = FastAPI(title="Sinta Serve", description="Appointment system using S3 and DynamoDB")
 
 # Add CORS middleware
 app.add_middleware(
@@ -29,7 +29,7 @@ S3_BUCKET = os.getenv("S3_BUCKET", "sinta-serve-bucket")
 dynamodb = boto3.resource('dynamodb')
 s3_client = boto3.client('s3')
 table = dynamodb.Table(DYNAMODB_TABLE)  # type:ignore 
-
+ 
 # Helper function to generate signed URLs
 def generate_signed_urls(image_keys: List[str]) -> List[str]:
     signed_urls = []

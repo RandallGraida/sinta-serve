@@ -4,6 +4,8 @@ import NotesList from "./NotesList";
 import NoteEditor from "./NoteEditor";
 import { Button } from "@/components/ui/button";
 import { Lightbulb } from "lucide-react";
+import Members from "./data/members";
+
 
 export default function LumenLogs() {
   const [selectedNote, setSelectedNote] = useState<Note | null>(null);
@@ -69,14 +71,7 @@ export default function LumenLogs() {
             </div>
           </section>
 
-          <div className="mt-12 sm:mt-16 text-left">
-            <h2 className="text-gray-500 text-[30px] flex flex-row">
-              Sinta Serve
-            </h2>
-            <p>
-              Request, Track, Receive, Done
-            </p>
-          </div>
+          <Members />
         </div>
       </div>
     );
@@ -97,8 +92,7 @@ export default function LumenLogs() {
             variant="outline"
             className="btn-black-outline touch-target"
           >
-            <Lightbulb className="h-4 w-4 mr-2" />
-            About
+            About us
           </Button>
         </div>
         
