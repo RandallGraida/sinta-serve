@@ -7,7 +7,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import ImageGallery from "@/components/ImageGallery";
 import type { Note, NoteCreate, NoteUpdate } from "@/types/notes";
 import notesService from "@/service/notes";
-import { Save, X, Image, Plus, Lightbulb, Sparkles } from "lucide-react";
+import { Save, X, Image, Plus, Lightbulb } from "lucide-react";
 
 interface NoteEditorProps {
   note: Note | null;

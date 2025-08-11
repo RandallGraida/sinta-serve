@@ -25,7 +25,7 @@ export const notesService = {
     const response = await api.put<Note>(`/notes/${id}`, noteData);
     return response.data;
   },
-
+ 
   // Delete a note
   deleteNote: async (id: string): Promise<{ message: string }> => {
     const response = await api.delete<{ message: string }>(`/notes/${id}`);

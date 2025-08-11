@@ -22,8 +22,8 @@ app.add_middleware(
 )
 
 # AWS Configuration
-DYNAMODB_TABLE = os.getenv("DYNAMODB_TABLE", "notes-table-sph")
-S3_BUCKET = os.getenv("S3_BUCKET", "notes-images-bucket-sph")
+DYNAMODB_TABLE = os.getenv("DYNAMODB_TABLE", "sinta-serve-dynamoDB")
+S3_BUCKET = os.getenv("S3_BUCKET", "sinta-serve-bucket")
 
 # Initialize AWS clients
 dynamodb = boto3.resource('dynamodb')

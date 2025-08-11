@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { Lightbulb, Home } from 'lucide-react'
+import { Home } from 'lucide-react'
 
 export default function Header() {
   return (

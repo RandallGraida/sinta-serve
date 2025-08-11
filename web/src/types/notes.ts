@@ -28,3 +28,4 @@ export interface ImageUploadResponse {
   message: string;
   image_key: string;
 }
+ 

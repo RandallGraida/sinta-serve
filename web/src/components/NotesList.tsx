@@ -7,7 +7,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import type { Note } from "@/types/notes";
 import notesService from "@/service/notes";
-import { Trash2, Edit, Plus, Image as ImageIcon, RefreshCw, Lightbulb, Sparkles } from "lucide-react";
+import { Trash2, Edit, Plus, Image as ImageIcon, RefreshCw, Lightbulb } from "lucide-react";
 
 interface NotesListProps {
   onEditNote: (note: Note) => void;
@@ -81,6 +81,7 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
     );
   }
 
+  // Notes page
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -107,14 +108,16 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
             <Lightbulb className="h-16 w-16 text-gray-400 mb-4" />
             <div className="text-gray-800 text-xl font-semibold mb-2">No notes yet</div>
             <p className="text-gray-600 mb-6 max-w-md">
-              Start capturing your thoughts! Create your first note to organize ideas and visual stories.
+              This appointment and scheduling system allocates slots on a first come, first served basis.
+              Users accept the responsibility for supplying, checking, and verifying the accuracy and correctness 
+              of the information they provide on this system in connection with their application. Incorrect or inaccurate information supplied may result in forfeiture of passport application.
             </p>
             <Button 
               onClick={onCreateNote} 
               className="flex items-center gap-2 btn-black shadow-lg"
             >
               <Plus className="h-4 w-4" />
-              Create your first note
+              Start Appointment
             </Button>
           </CardContent>
         </Card>
