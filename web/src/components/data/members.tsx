@@ -23,13 +23,9 @@ const members = [
 
 export default function Members() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
+    <section className="max-w-7xl mx-auto px-6">
     <div className="mb-10">
       <h2 className="text-4xl font-extrabold text-slate-900">Our team</h2>
-      <p className="mt-4 text-slate-500 max-w-2xl">
-      We are a dynamic group of individuals who are passionate about what we do
-      and dedicated to delivering the best results for our clients.
-      </p>
     </div>
 
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
