@@ -65,11 +65,6 @@ class Note(BaseModel):
     images: List[str] = []
     image_urls: List[str] = []
 
-# Health check endpoint
-@app.get("/health")
-async def health_check():
-    return {"status": "healthy", "service": "notes-api"}
-
 # Create a new note
 @app.post("/notes", response_model=Note)
 async def create_note(note: NoteCreate):
@@ -273,6 +268,11 @@ async def delete_image(note_id: str, image_key: str):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to delete image: {str(e)}")
+
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "service": "notes-api"}
 
 if __name__ == "__main__":
     import uvicorn

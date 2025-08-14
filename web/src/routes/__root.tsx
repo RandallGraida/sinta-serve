@@ -5,7 +5,7 @@ import Header from '../components/Header'
 
 export const Route = createRootRoute({
   component: () => (
-    <div className="min-h-screen lumenlogs-bg safe-area-padding">
+    <div className="min-h-screen safe-area-padding">
       <Header />
       <main className="relative">
         <Outlet />

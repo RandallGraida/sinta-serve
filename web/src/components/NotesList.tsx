@@ -86,10 +86,10 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <h2 className="text-2xl font-bold text-gray-800">Your Notes</h2>
+          <h2 className="text-2xl font-bold text-gray-800">Appointments</h2>
           {notes.length > 0 && (
             <Badge variant="secondary" className="text-sm bg-gray-100 text-gray-800 border-gray-200">
-              {notes.length} note{notes.length > 1 ? 's' : ''}
+              {notes.length} appointment{notes.length > 1 ? 's' : ''}
             </Badge>
           )}
         </div>
@@ -98,7 +98,7 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
           className="flex items-center gap-2 btn-black shadow-lg"
         >
           <Plus className="h-4 w-4" />
-          New Note
+          New Appointment
         </Button>
       </div>
 
@@ -106,7 +106,7 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
         <Card className="border-dashed border-gray-300 bg-gradient-to-br from-gray-50 to-gray-100">
           <CardContent className="flex flex-col items-center justify-center py-12 text-center">
             <Lightbulb className="h-16 w-16 text-gray-400 mb-4" />
-            <div className="text-gray-800 text-xl font-semibold mb-2">No notes yet</div>
+            <div className="text-gray-800 text-xl font-semibold mb-2">No appointments yet</div>
             <p className="text-gray-600 mb-6 max-w-md">
               This appointment and scheduling system allocates slots on a first come, first served basis.
               Users accept the responsibility for supplying, checking, and verifying the accuracy and correctness 

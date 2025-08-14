@@ -82,10 +82,6 @@ export default function LumenLogs() {
       <div className="mobile-container py-6 sm:py-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 gap-4">
           <div className="flex items-center">
-            <Lightbulb className="h-6 w-6 sm:h-8 sm:w-8 text-black mr-3" />
-            <h1 className="text-2xl sm:text-3xl font-bold text-black">
-              Notes
-            </h1>
           </div>
           <Button 
             onClick={() => setShowWelcome(true)}
