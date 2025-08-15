@@ -193,7 +193,7 @@ export default function ImageGallery({
             </div>
             <div>
               <p className="text-sm font-medium text-gray-800 mb-1">No images attached</p>
-              <p className="text-xs text-gray-600">Upload images to enhance your note with visuals</p>
+              <p className="text-xs text-gray-600">Upload your payment receipt</p>
             </div>
             <Button
               variant="outline"
@@ -203,7 +203,7 @@ export default function ImageGallery({
               className="mt-4 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400"
             >
               <ImageIcon className="h-4 w-4 mr-2" />
-              Add your first image
+              Add image
             </Button>
           </CardContent>
         </Card>

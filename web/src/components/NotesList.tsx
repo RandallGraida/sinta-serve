@@ -7,7 +7,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import type { Note } from "@/types/notes";
 import notesService from "@/service/notes";
-import { Trash2, Edit, Plus, Image as ImageIcon, RefreshCw, Lightbulb } from "lucide-react";
+import { Trash2, Edit, Plus, Image as ImageIcon, RefreshCw, Lightbulb, Check } from "lucide-react";
 
 interface NotesListProps {
   onEditNote: (note: Note) => void;
@@ -61,7 +61,7 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
       <div className="flex justify-center items-center h-64">
         <div className="flex items-center gap-2 text-lg text-gray-700">
           <RefreshCw className="h-5 w-5 animate-spin text-gray-500" />
-          Loading your notes...
+          Loading...
         </div>
       </div>
     );
@@ -89,7 +89,7 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
           <h2 className="text-2xl font-bold text-gray-800">Appointments</h2>
           {notes.length > 0 && (
             <Badge variant="secondary" className="text-sm bg-gray-100 text-gray-800 border-gray-200">
-              {notes.length} appointment{notes.length > 1 ? 's' : ''}
+              {notes.length} / 10 slot{notes.length > 1 ? 's' : ''}
             </Badge>
           )}
         </div>
@@ -97,7 +97,7 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
           onClick={onCreateNote} 
           className="flex items-center gap-2 btn-black shadow-lg"
         >
-          <Plus className="h-4 w-4" />
+          <Plus className="h-4 w-4 " />
           New Appointment
         </Button>
       </div>
@@ -135,21 +135,10 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
                       {note.title}
                     </CardTitle>
                     <CardDescription className="text-sm text-gray-600/70">
-                      Updated {formatDate(note.updated_at)}
+                      {formatDate(note.updated_at)}
                     </CardDescription>
                   </div>
                   <div className="flex gap-1 ml-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onEditNote(note);
-                      }}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-100 text-gray-700"
-                    >
-                      <Edit className="h-4 w-4" />
-                    </Button>
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
                         <Button
@@ -158,14 +147,14 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
                           onClick={(e) => e.stopPropagation()}
                           className="opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-50"
                         >
-                          <Trash2 className="h-4 w-4 text-red-500" />
+                          <Check className="h-8 w-8 text-green-500" />
                         </Button>
                       </AlertDialogTrigger>
                       <AlertDialogContent>
                         <AlertDialogHeader>
-                          <AlertDialogTitle>Delete Note</AlertDialogTitle>
+                          <AlertDialogTitle>Mark as done</AlertDialogTitle>
                           <AlertDialogDescription>
-                            Are you sure you want to delete "{note.title}"? This action cannot be undone and will also delete any attached images.
+                            Mark "{note.title}" as done?.
                           </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>
@@ -174,7 +163,7 @@ export default function NotesList({ onEditNote, onCreateNote, refreshTrigger }: 
                             onClick={() => handleDeleteNote(note.id)}
                             className="bg-red-500 hover:bg-red-600"
                           >
-                            Delete
+                            Mark as done
                           </AlertDialogAction>
                         </AlertDialogFooter>
                       </AlertDialogContent>

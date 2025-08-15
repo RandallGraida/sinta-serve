@@ -3,8 +3,8 @@ import type { Note } from "@/types/notes";
 import NotesList from "./NotesList";
 import NoteEditor from "./NoteEditor";
 import { Button } from "@/components/ui/button";
-import { Lightbulb } from "lucide-react";
 import Members from "./data/members";
+import Introduction from "./data/intro";
 
 
 export default function LumenLogs() {
@@ -44,7 +44,7 @@ export default function LumenLogs() {
 
   if (showWelcome) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white mb-20">
         <div className="mobile-container py-8 sm:py-16">
           <section className="grid place-content-center h-100">
             <div className="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
@@ -71,8 +71,11 @@ export default function LumenLogs() {
             </div>
           </section>
 
-          <Members />
+         
+          
         </div>
+         <Introduction />
+        <Members />
       </div>
     );
   }

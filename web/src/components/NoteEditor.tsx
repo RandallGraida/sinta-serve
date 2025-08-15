@@ -48,7 +48,7 @@ export default function NoteEditor({ note, isOpen, onClose, onSave, isCreating }
 
   const handleSave = async () => {
     if (!title.trim()) {
-      setError("Title is required");
+      setError("Name is required");
       return;
     }
 
@@ -137,13 +137,13 @@ export default function NoteEditor({ note, isOpen, onClose, onSave, isCreating }
             <div className="space-y-6">
               <div>
                 <label htmlFor="title" className="block text-sm font-medium mb-2 text-gray-800">
-                  Title <span className="text-red-500">*</span>
+                  Name <span className="text-red-500">*</span>
                 </label>
                 <Input
                   id="title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  placeholder="Enter your title"
+                  placeholder="Enter your name"
                   className="w-full text-gray-900 placeholder:text-gray-400"
                 />
               </div>
@@ -183,10 +183,6 @@ export default function NoteEditor({ note, isOpen, onClose, onSave, isCreating }
           {currentNote && (showImageSection || !isCreating) && (
             <div className="space-y-4 p-4 sm:p-6 bg-gradient-to-br from-gray-50 to-gray-100/80 rounded-lg border border-gray-200 shadow-sm">
               <div className="flex items-center gap-2">
-                <Image className="h-5 w-5 text-gray-500" />
-                <label className="text-sm font-medium text-gray-800">
-                  Visual Elements
-                </label>
               </div>
               <ImageGallery
                 noteId={currentNote.id}
@@ -209,31 +205,13 @@ export default function NoteEditor({ note, isOpen, onClose, onSave, isCreating }
               Cancel
             </Button>
             
-            {isCreating && createdNote ? (
+            {isCreating && createdNote && (
               <Button 
                 onClick={handleFinishCreating}
                 className="order-1 sm:order-2 btn-black touch-target shadow-lg"
               >
                 <Save className="h-4 w-4 mr-2" />
                 Finish & Close
-              </Button>
-            ) : (
-              <Button 
-                onClick={handleSave} 
-                disabled={loading || !title.trim()}
-                className="order-1 sm:order-2 btn-black touch-target shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <Save className="h-4 w-4 mr-2" />
-                {loading ? (
-                  <span className="flex items-center gap-2">
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    Saving...
-                  </span>
-                ) : isCreating ? (
-                  "Create & Add Images"
-                ) : (
-                  "Save Changes"
-                )}
               </Button>
             )}
           </div>
